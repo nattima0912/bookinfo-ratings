@@ -47,11 +47,11 @@ jobs:
               }
             }    
   acceptance-test:
-    needs: build
+    needs: deploy
     runs-on: ubuntu-20.04
     steps:
-      - name: Check health check page
-        run: http://bookinfo.dev.opsta.net/student42/ratings/health   
+      - name: Acceptance Test
+        run: http://bookinfo.dev.opsta.net/student42/ratings/health | grep "Ratings is working"
 
 
 
