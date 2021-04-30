@@ -45,7 +45,13 @@ jobs:
               "extraEnv": {
                 "COMMIT_SHA": "${{ github.sha }}"
               }
-            }        
+            }    
+  acceptance-test:
+    needs: build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check health check page
+        run: http://bookinfo.dev.opsta.net/student42/ratings/health   
 
 
 
