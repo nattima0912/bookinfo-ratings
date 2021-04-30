@@ -39,7 +39,13 @@ jobs:
           release: bookinfo-dev-ratings
           namespace: student42-bookinfo-dev
           chart: k8s/helm
-          value-files: k8s/helm-values/values-bookinfo-dev-ratings.yaml          
+          value-files: k8s/helm-values/values-bookinfo-dev-ratings.yaml
+          values: |
+            {
+              "extraEnv": {
+                "COMMIT_SHA": "${{ github.sha }}"
+              }
+            }        
 
 
 
