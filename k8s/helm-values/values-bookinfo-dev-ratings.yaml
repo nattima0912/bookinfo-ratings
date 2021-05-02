@@ -1,7 +1,7 @@
 ratings:
   namespace: student42-bookinfo-dev
   image: ghcr.io/nattima0912/bookinfo-ratings
-  tag: dev
+  tag: ${{ env.ENV_NAME }}
   replicas: 1
   imagePullSecrets: registry-bookinfo
   port: 8080
